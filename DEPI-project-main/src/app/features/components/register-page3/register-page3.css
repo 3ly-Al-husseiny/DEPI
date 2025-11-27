@@ -1,0 +1,99 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cart {
+
+    width: 400px;
+    height: 500px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.Items {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info h2 {
+    font-weight: 700;
+    margin: auto;
+}
+.info p {
+    color: gray;
+    font-size: 14px;
+    margin: auto;
+}
+.info {
+
+
+    margin: 10px;
+    font-size: 18px;
+    
+}
+
+.inputs {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+
+}
+
+.inputs .input1 {
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 0 15px;
+    font-size: 16px;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    background-color: rgb(220, 217, 217);
+
+}
+
+.inputs .input1 input {
+    border: none;
+    outline: none;
+
+    font-size: 16px;
+}
+
+.inputs .input1 label {
+    font-size: 20px;
+}
+
+.links {
+    margin-top: 10px;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+
+    padding: 15px 0;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid seagreen;
+    background-color: seagreen;
+    margin: 0 50px;
+}
+
+.icon {
+    border-radius: 50%;
+}

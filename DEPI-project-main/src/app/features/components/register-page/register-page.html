@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="cart">
+        <div class="Items">
+            <div class="icon">
+                <svg width="30" height="30" fill="none" stroke="green" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+
+            </div>
+
+            <div class="info">
+                <h2>basic information</h2>
+                <p>Tell us about yourself</p>
+            </div>
+        </div>
+        <div class="form">
+            <form formGroup="regForm" (ngSubmit)="onSubmit()">
+                <div class="formInput1">
+                    <label for="">full name:</label>
+                    <input class="form-control" type="text" formControlName="name">
+                </div>
+                <div class="contain ">
+                    <div class="left d-flex ">
+                        <div class="formInput2">
+                            <label for="">age</label>
+                            <input class="form-control" type="number" formControlName="number">
+                        </div>
+                        <div class="formInput3">
+                            <label for="">gender</label>
+                            <select name="" id="" class="">
+                                <option value="male">male</option>
+                                <option value="female">female</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="right d-flex justify-content-around">
+                        <div class="formInput4">
+                            <label for="">height</label>
+                            <input class="form-control" type="number" value="170" formControlName="number" >
+                        </div>
+                        <div class="formInput4">
+                            <label for="">weight</label>
+                            <input class="form-control" type="number" value="70" formControlName="number">
+                        </div>
+                    </div>
+                </div>
+                <a onsubmit="onsubmit()" routerLink="/register2">next</a>
+                <!-- <button routerlink="/register2"  class="btn " type="submit">Next</button> -->
+                
+            </form>
+
+        </div>
+    </div>
+</div>

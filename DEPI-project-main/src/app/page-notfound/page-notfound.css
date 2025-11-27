@@ -1,0 +1,16 @@
+.not-found {
+    text-align: center;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+h2 {
+    color: red;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+}
