@@ -2,7 +2,7 @@
 
 
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -16,11 +16,17 @@ export class HeaderComponent {
 
     isMenuOpen = false;
 
+    constructor(private router: Router) { }
+
     toggleMenu(): void {
         this.isMenuOpen = !this.isMenuOpen;
     }
 
     closeMenu(): void {
         this.isMenuOpen = false;
+    }
+
+    exitChallenges(): void {
+        this.router.navigate(['/physical']);
     }
 }

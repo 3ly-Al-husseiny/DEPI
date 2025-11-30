@@ -103,7 +103,10 @@
 
         <!-- No Active Challenges -->
         <div *ngIf="activeChallenges.length === 0" class="empty-message">
-            No active challenges yet.
+            <p>📋 You have not joined any challenges yet.</p>
+            <button class="btn-primary" (click)="browseChallenges()" style="margin-top: 1rem;">
+                🎯 Browse Challenges
+            </button>
         </div>
 
         <!-- Progress List -->

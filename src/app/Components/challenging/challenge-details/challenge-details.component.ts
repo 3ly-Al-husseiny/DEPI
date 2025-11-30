@@ -57,25 +57,41 @@ export class ChallengeDetailsComponent implements OnInit {
     async loadChallengeDetails(): Promise<void> {
         this.isLoading = true;
 
-        const challengeData = await this.challengeService.getChallengeDefinition(this.challengeId);
-        this.challenge = challengeData || null;
+        try {
+            // Try sync first (data might already be loaded from previous page)
+            let challengeData = this.challengeService.getChallengeDefinitionSync(this.challengeId);
+            
+            // If not found, ensure data is loaded and try again
+            if (!challengeData) {
+                challengeData = await this.challengeService.getChallengeDefinition(this.challengeId);
+            }
+            
+            this.challenge = challengeData || null;
+            this.userChallenge = this.challengeService.getUserChallenge(this.challengeId);
 
-        this.userChallenge = this.challengeService.getUserChallenge(this.challengeId);
+            if (!this.challenge || !this.userChallenge) {
+                this.notificationService.error(
+                    'Challenge Not Found',
+                    'This challenge does not exist or you have not joined it yet.'
+                ).then(() => {
+                    this.router.navigate(['/challenging/list']);
+                });
+                return;
+            }
 
-        if (!this.challenge || !this.userChallenge) {
+            // Calculate statistics
+            this.updateStats();
+        } catch (error) {
+            console.error('Error loading challenge details:', error);
             this.notificationService.error(
-                'Challenge Not Found',
-                'This challenge does not exist or you have not joined it yet.'
+                'Loading Error',
+                'Failed to load challenge details. Please try again.'
             ).then(() => {
                 this.router.navigate(['/challenging/list']);
             });
-            return;
+        } finally {
+            this.isLoading = false;
         }
-
-        // Calculate statistics
-        this.updateStats();
-
-        this.isLoading = false;
     }
 
     updateStats(): void {

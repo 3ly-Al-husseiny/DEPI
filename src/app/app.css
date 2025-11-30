@@ -5,7 +5,8 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
   min-height: 100vh;
 }
 
@@ -18,6 +19,17 @@ body {
 .main-content {
   flex: 1;
   width: 100%;
+}
+
+/* Ensure the sticky navbar doesn't overlap page content. Adjust the top padding to match navbar height. */
+.main-content {
+  padding-top: 72px; /* adjust if navbar height changes */
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 92px; /* taller navbar on small screens due to wrapping */
+  }
 }
 
 /* src/app/app.component.css */

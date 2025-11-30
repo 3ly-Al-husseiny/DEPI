@@ -183,7 +183,7 @@ export class ProgressComponent implements OnInit, AfterViewInit {
                         max: 100,
                         ticks: {
                             color: '#ffffff',
-                            callback: function (value) {
+                            callback: function (value: number | string) {
                                 return value + '%';
                             }
                         },
@@ -214,7 +214,7 @@ export class ProgressComponent implements OnInit, AfterViewInit {
                         borderWidth: 1,
                         padding: 12,
                         callbacks: {
-                            label: function (context) {
+                            label: function (context: any) {
                                 return 'Progress: ' + context.parsed.y + '%';
                             }
                         }
@@ -283,7 +283,7 @@ export class ProgressComponent implements OnInit, AfterViewInit {
                         beginAtZero: true,
                         ticks: {
                             color: '#ffffff',
-                            callback: function (value) {
+                            callback: function (value: number | string) {
                                 return value + ' pts';
                             }
                         },
@@ -314,7 +314,7 @@ export class ProgressComponent implements OnInit, AfterViewInit {
                         borderWidth: 1,
                         padding: 12,
                         callbacks: {
-                            label: function (context) {
+                            label: function (context: any) {
                                 return 'Total Points: ' + context.parsed.y;
                             }
                         }

@@ -41,13 +41,13 @@ export const routes: Routes = [
     canActivate: [authGuard]
   },
   {
-    path: 'challenging/:id',
-    loadComponent: () => import('./Components/challenging/challenge-details/challenge-details.component').then(m => m.ChallengeDetailsComponent),
+    path: 'challenging/progress',
+    loadComponent: () => import('./Components/challenging/progress/progress.component').then(m => m.ProgressComponent),
     canActivate: [authGuard]
   },
   {
-    path: 'challenging/progress',
-    loadComponent: () => import('./Components/challenging/progress/progress.component').then(m => m.ProgressComponent),
+    path: 'challenging/:id',
+    loadComponent: () => import('./Components/challenging/challenge-details/challenge-details.component').then(m => m.ChallengeDetailsComponent),
     canActivate: [authGuard]
   },
   {
