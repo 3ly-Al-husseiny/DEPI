@@ -43,6 +43,25 @@
       "status": "planned",
       "dataFiles": [],
       "services": []
+    },
+    "challenging": {
+      "name": "Challenging Module",
+      "status": "active",
+      "dataFiles": [
+        {
+          "filename": "challenges.json",
+          "description": "12 health challenges with duration and points",
+          "endpoint": "/api/challenging/challenges",
+          "method": "GET",
+          "responseType": "Challenge[]"
+        }
+      ],
+      "services": [
+        "ChallengeService",
+        "StorageService",
+        "NotificationService",
+        "ReminderService"
+      ]
     }
   },
   "apiSimulation": {

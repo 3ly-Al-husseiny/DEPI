@@ -14,6 +14,9 @@ src/assets/data/
 ├── mental/                      # Mental health module data
 │   ├── examination-sections.json
 │   └── README.md (to be created)
+├── challenging/                 # Challenging module data
+│   ├── challenges.json
+│   └── README.md
 ├── library/                     # Resource library data
 │   └── resources.json
 ├── nutrition/                   # Nutrition module data (planned)
@@ -315,7 +318,8 @@ For questions about data structure:
 ## 🗺️ Roadmap
 
 - [x] Physical Module data structure
-- [ ] Mental Module data structure
+- [x] Mental Module data structure
+- [x] Challenging Module data structure
 - [ ] Nutrition Module data structure
 - [ ] Central data service
 - [ ] JSON schema validation
