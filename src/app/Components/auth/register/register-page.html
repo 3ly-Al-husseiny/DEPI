@@ -71,6 +71,35 @@
                     </div>
                 </div>
 
+                <div class="formInput1 gender-section">
+                    <label>Gender:</label>
+                    <div class="gender-options">
+                        <label class="gender-option">
+                            <input type="radio" formControlName="gender" value="male">
+                            <span class="gender-label">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="10" cy="4" r="3"></circle>
+                                    <path d="M10 7v7m-3-3h6m-3 3v3"></path>
+                                </svg>
+                                Male
+                            </span>
+                        </label>
+                        <label class="gender-option">
+                            <input type="radio" formControlName="gender" value="female">
+                            <span class="gender-label">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="10" cy="6" r="4"></circle>
+                                    <path d="M10 10v6m-3-3h6"></path>
+                                </svg>
+                                Female
+                            </span>
+                        </label>
+                    </div>
+                    <div *ngIf="regForm.get('gender')?.invalid && regForm.get('gender')?.touched" class="error-text">
+                        Please select your gender
+                    </div>
+                </div>
+
                 <div class="contain">
                     <div class="left d-flex">
                         <div class="formInput2">

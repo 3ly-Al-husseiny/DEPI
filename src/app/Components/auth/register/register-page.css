@@ -252,4 +252,65 @@ label {
     border-color: #4CAF50;
 }
 
+/* Gender Selection */
+.gender-section {
+    margin-bottom: 20px;
+}
+
+.gender-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 8px;
+}
+
+.gender-option {
+    flex: 1;
+    cursor: pointer;
+}
+
+.gender-option input[type="radio"] {
+    display: none;
+}
+
+.gender-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: #aaa;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.gender-label svg {
+    stroke: #aaa;
+    transition: stroke 0.3s ease;
+}
+
+.gender-label:hover {
+    background: rgba(76, 175, 80, 0.1);
+    border-color: rgba(76, 175, 80, 0.4);
+    color: #81C784;
+}
+
+.gender-label:hover svg {
+    stroke: #81C784;
+}
+
+.gender-option input[type="radio"]:checked + .gender-label {
+    background: rgba(76, 175, 80, 0.15);
+    border-color: #4CAF50;
+    color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.gender-option input[type="radio"]:checked + .gender-label svg {
+    stroke: #4CAF50;
+}
+
 /* Responsive Design */

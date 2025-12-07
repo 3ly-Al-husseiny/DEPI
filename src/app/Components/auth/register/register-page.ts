@@ -32,6 +32,7 @@ export class RegisterPage {
       'name': new FormControl('', Validators.required),
       'email': new FormControl('', [Validators.required, Validators.email]),
       'password': new FormControl('', [Validators.required, Validators.minLength(6)]),
+      'gender': new FormControl('', Validators.required),
       'weight': new FormControl('', [Validators.required, Validators.min(35), Validators.max(250)]),
       'height': new FormControl('', [Validators.required, Validators.min(90), Validators.max(220)])
     });
@@ -65,7 +66,7 @@ export class RegisterPage {
         weight: Number(this.regForm.value.weight),
         height: Number(this.regForm.value.height),
         age: 25, // Default value
-        gender: 'other', // Default value
+        gender: this.regForm.value.gender,
         photo: this.photoBase64 || `https://ui-avatars.com/api/?name=${encodeURIComponent(this.regForm.value.name)}&size=200&background=2d5f3f&color=e8f5e9&bold=true`
       };
 
