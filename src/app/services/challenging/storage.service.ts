@@ -180,7 +180,60 @@ export class StorageService {
     }
 
     /**
-     * Check badge eligibility and award new badges
+     * Award a challenge-specific badge
+     * @param challengeId - ID of the completed challenge
+     * @param challengeTitle - Title of the challenge
+     * @param icon - Challenge icon
+     * @returns Success status
+     */
+    awardChallengeBadge(challengeId: number, challengeTitle: string, icon: string): boolean {
+        const data = this.getData() || this.init();
+        
+        // Initialize challengeBadges array if it doesn't exist
+        if (!data.user.challengeBadges) {
+            data.user.challengeBadges = [];
+        }
+
+        // Check if badge already awarded
+        const alreadyAwarded = data.user.challengeBadges.some(
+            badge => badge.challengeId === challengeId
+        );
+
+        if (alreadyAwarded) {
+            return false;
+        }
+
+        // Create badge with color based on challenge ID
+        const colors = [
+            '#2196F3', '#4CAF50', '#FF9800', '#9C27B0', '#F44336',
+            '#00BCD4', '#8BC34A', '#FF5722', '#673AB7', '#3F51B5',
+            '#009688', '#CDDC39'
+        ];
+
+        const badge = {
+            name: `${challengeTitle} Master`,
+            icon: icon,
+            color: colors[challengeId % colors.length],
+            challengeId: challengeId,
+            challengeTitle: challengeTitle,
+            dateEarned: new Date().toISOString()
+        };
+
+        data.user.challengeBadges.push(badge);
+        return this.setData(data);
+    }
+
+    /**
+     * Get all earned challenge badges
+     * @returns Array of challenge badges
+     */
+    getChallengeBadges() {
+        const data = this.getData() || this.init();
+        return data.user.challengeBadges || [];
+    }
+
+    /**
+     * Check badge eligibility and award new badges (Legacy - for milestone badges)
      * Bronze: 3+ completed challenges
      * Silver: 6+ completed challenges  
      * Gold: 9+ completed challenges

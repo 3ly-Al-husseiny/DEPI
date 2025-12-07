@@ -257,34 +257,246 @@
 }
 
 /* Responsive Design */
+
+/* Tablets and smaller laptops (1024px and below) */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0.6rem 1.5rem;
+  }
+
+  .navbar-menu {
+    gap: 0.4rem;
+  }
+
+  .nav-link {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .btn-settings,
+  .btn-profile {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile Landscape & Small Tablets (768px and below) */
 @media (max-width: 768px) {
   .navbar-container {
     flex-wrap: wrap;
-    padding: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .navbar-left {
+    order: 1;
+  }
+
+  .navbar-right {
+    order: 2;
+  }
+
+  .navbar-center {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0.8rem;
   }
 
   .navbar-menu {
     width: 100%;
-    order: 3;
-    margin-top: 1rem;
     justify-content: flex-start;
-    gap: 0.25rem;
+    gap: 0.3rem;
     overflow-x: auto;
+    overflow-y: hidden;
     padding-bottom: 0.5rem;
+    /* Scrollbar styling for mobile nav */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  }
+
+  .navbar-menu::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .navbar-menu::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .navbar-menu::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
   }
 
   .nav-link {
     padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     white-space: nowrap;
+    min-width: fit-content;
+  }
+
+  .nav-icon {
+    font-size: 1rem;
+  }
+
+  .logo-image {
+    height: 35px;
   }
 
   .brand-name {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
+  .navbar-actions {
+    gap: 0.6rem;
+  }
+
+  .btn-settings,
   .btn-profile {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .settings-icon,
+  .profile-icon {
+    font-size: 1rem;
+  }
+
+  .dropdown-menu {
+    min-width: 180px;
   }
 }
+
+/* Mobile Portrait (480px and below) */
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0.6rem 0.8rem;
+    gap: 0.6rem;
+  }
+
+  .logo-image {
+    height: 32px;
+  }
+
+  .brand-name {
+    display: none; /* Hide brand name on very small screens */
+  }
+
+  .navbar-menu {
+    gap: 0.25rem;
+    margin-top: 0.6rem;
+  }
+
+  .nav-link {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    gap: 0.3rem;
+  }
+
+  .nav-icon {
+    font-size: 0.95rem;
+  }
+
+  .navbar-actions {
+    gap: 0.5rem;
+  }
+
+  /* Hide text labels on buttons for very small screens */
+  .btn-settings span:not(.settings-icon),
+  .btn-profile span:not(.profile-icon) {
+    display: none;
+  }
+
+  .btn-settings,
+  .btn-profile {
+    padding: 0.5rem;
+    min-width: 36px;
+    justify-content: center;
+  }
+
+  .settings-icon,
+  .profile-icon {
+    font-size: 1.1rem;
+  }
+
+  .dropdown-menu {
+    min-width: 160px;
+    right: -10px; /* Adjust for smaller screens */
+  }
+
+  .dropdown-item {
+    padding: 0.75rem 1rem;
+    gap: 0.6rem;
+  }
+
+  .item-icon {
+    font-size: 1.1rem;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .navbar-container {
+    padding: 0.5rem 0.6rem;
+  }
+
+  .logo-image {
+    height: 28px;
+  }
+
+  .nav-link {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.75rem;
+  }
+
+  .nav-icon {
+    font-size: 0.9rem;
+  }
+
+  /* Show only icons for nav items on very small screens */
+  .nav-link span:not(.nav-icon) {
+    display: none;
+  }
+
+  .btn-settings,
+  .btn-profile {
+    padding: 0.4rem;
+    min-width: 32px;
+  }
+
+  .settings-icon,
+  .profile-icon {
+    font-size: 1rem;
+  }
+
+  .dropdown-menu {
+    min-width: 140px;
+  }
+
+  .dropdown-item {
+    padding: 0.65rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Landscape Orientation (for phones in landscape) */
+@media (max-height: 600px) and (orientation: landscape) {
+  .navbar-container {
+    padding: 0.4rem 1rem;
+  }
+
+  .navbar-center {
+    margin-top: 0.5rem;
+  }
+
+  .nav-link {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  .btn-settings,
+  .btn-profile {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+

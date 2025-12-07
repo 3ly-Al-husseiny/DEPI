@@ -84,6 +84,12 @@ label {
     box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
 }
 
+.form-control::placeholder,
+.form-select::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
 .contain {
     display: flex;
     flex-direction: column;
@@ -166,3 +172,84 @@ label {
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+/* Photo Upload Section */
+.photo-upload-section {
+    margin-bottom: 20px;
+}
+
+.photo-upload-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.photo-preview {
+    flex-shrink: 0;
+}
+
+.preview-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4CAF50;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.upload-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.btn-upload {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    align-self: flex-start;
+}
+
+.btn-upload:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.file-info {
+    font-size: 0.85rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Validation Error Messages */
+.error-text {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 6px;
+    padding-left: 4px;
+    font-weight: 500;
+}
+
+.form-control.ng-invalid.ng-touched {
+    border-color: #ff6b6b;
+}
+
+.form-control.ng-valid.ng-touched {
+    border-color: #4CAF50;
+}
+
+/* Responsive Design */

@@ -2,8 +2,7 @@
 
 .user-summary-card {
   text-align: center;
-  padding: 32px 24px;
-  min-height: 607px;
+  padding: 28px 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,6 +63,24 @@
 }
 
 /* === Responsive === */
+
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+  .user-summary-card {
+    padding: 28px 22px;
+  }
+  
+  .user-avatar {
+    width: 110px;
+    height: 110px;
+  }
+  
+  .user-details h3 {
+    font-size: 26px;
+  }
+}
+
+/* Mobile Landscape & Tablets (768px and below) */
 @media (max-width: 768px) {
   .user-summary-card {
     min-height: auto;
@@ -81,5 +98,49 @@
   
   .user-details .points {
     font-size: 16px;
+  }
+}
+
+/* Mobile Portrait (480px and below) */
+@media (max-width: 480px) {
+  .user-summary-card {
+    padding: 20px 16px;
+  }
+  
+  .user-avatar {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .user-details h3 {
+    font-size: 22px;
+  }
+  
+  .user-details .points {
+    font-size: 15px;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .user-avatar {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .user-details h3 {
+    font-size: 20px;
+  }
+}
+
+/* Landscape Orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+  .user-summary-card {
+    min-height: auto;
+    padding: 20px;
+  }
+  
+  .avatar-section {
+    gap: 15px;
   }
 }

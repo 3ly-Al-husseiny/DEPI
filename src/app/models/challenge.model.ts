@@ -1,5 +1,15 @@
 // Defines the structure for challenge data
 
+// Badge awarded upon challenge completion
+export interface ChallengeBadge {
+    name: string;
+    icon: string;
+    color: string;
+    challengeId: number;
+    challengeTitle: string;
+    dateEarned?: string;
+}
+
 // challenge definition
 export interface Challenge {
     id: number;
@@ -16,6 +26,7 @@ export interface UserChallenge extends Challenge {
     progress: boolean[];
     joined: boolean;
     pointsEarned: number;
+    badgeEarned?: boolean;
 }
 
 // Challenge statistics

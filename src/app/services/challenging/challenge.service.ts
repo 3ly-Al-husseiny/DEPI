@@ -185,6 +185,7 @@ export class ChallengeService {
     success: boolean;
     isFullyCompleted: boolean;
     newBadges: string[];
+    challengeBadgeAwarded?: boolean;
   } {
     const userChallenge = this.storageService.getChallengeById(challengeId);
 
@@ -198,23 +199,39 @@ export class ChallengeService {
     // Check if challenge is fully completed
     const isFullyCompleted = userChallenge.progress.every((day) => day === true);
     let newBadges: string[] = [];
+    let challengeBadgeAwarded = false;
 
     if (isFullyCompleted && userChallenge.pointsEarned === 0) {
       // Award points
       userChallenge.pointsEarned = userChallenge.points;
       this.storageService.addPoints(userChallenge.points);
 
-      // Check and award badges
-      newBadges = this.storageService.checkAndAwardBadges();
+      // Award challenge-specific badge
+      const badgeSuccess = this.storageService.awardChallengeBadge(
+        userChallenge.id,
+        userChallenge.title,
+        userChallenge.icon
+      );
+      
+      if (badgeSuccess) {
+        challengeBadgeAwarded = true;
+        userChallenge.badgeEarned = true;
+        newBadges.push(userChallenge.title);
+      }
+
+      // Also check and award milestone badges (Bronze, Silver, Gold) - keeping legacy system
+      const milestoneBadges = this.storageService.checkAndAwardBadges();
+      newBadges = [...newBadges, ...milestoneBadges];
     }
 
     // Save updates
     this.storageService.updateChallenge(challengeId, {
       progress: userChallenge.progress,
       pointsEarned: userChallenge.pointsEarned,
+      badgeEarned: userChallenge.badgeEarned,
     });
 
-    return { success: true, isFullyCompleted, newBadges };
+    return { success: true, isFullyCompleted, newBadges, challengeBadgeAwarded };
   }
 
   /**

@@ -124,14 +124,123 @@ h2 {
   box-shadow: 0 0 20px #ef5350;
 }
 
+/* === Challenge Badge Colors === */
+.badge-icon.bronze-bg {
+  background: linear-gradient(135deg, #cd7f32 0%, #8b5a00 100%);
+}
+
+.badge-icon.bronze-bg::after {
+  background: #cd7f32;
+  box-shadow: 0 0 20px #cd7f32;
+}
+
+.badge-icon.silver-bg {
+  background: linear-gradient(135deg, #c0c0c0 0%, #808080 100%);
+}
+
+.badge-icon.silver-bg::after {
+  background: #c0c0c0;
+  box-shadow: 0 0 20px #c0c0c0;
+}
+
+.badge-icon.gold-bg {
+  background: linear-gradient(135deg, #ffd700 0%, #daa520 100%);
+}
+
+.badge-icon.gold-bg::after {
+  background: #ffd700;
+  box-shadow: 0 0 20px #ffd700;
+}
+
 .badge-item span {
   font-weight: 600;
   line-height: 1.3;
   color: var(--text-secondary);
 }
 
+/* === Badge Emoji Icon === */
+.badge-emoji {
+  font-size: 32px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* === Badge Info Structure === */
+.badge-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.badge-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.badge-date {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* === No Badges State === */
+.no-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-tertiary);
+}
+
+.no-badges .empty-icon {
+  font-size: 64px;
+  color: var(--text-tertiary);
+  opacity: 0.3;
+  margin-bottom: 16px;
+}
+
+.no-badges p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.no-badges .hint {
+  font-size: 13px;
+  color: #ffffff;
+  opacity: 0.9;
+  margin-top: 12px;
+}
+
 /* === Responsive === */
+
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+  .earned-badges-card {
+    padding: 24px;
+  }
+  
+  .badge-item {
+    width: 100px;
+  }
+  
+  .badge-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 30px;
+  }
+}
+
+/* Mobile Landscape & Tablets (768px and below) */
 @media (max-width: 768px) {
+  .earned-badges-card {
+    padding: 20px;
+  }
+  
   .badges-list {
     justify-content: center;
     gap: 16px;
@@ -139,7 +248,7 @@ h2 {
   
   .badge-item {
     width: 90px;
-  }
+}
   
   .badge-icon {
     width: 60px;
@@ -149,5 +258,43 @@ h2 {
   
   .badge-item span {
     font-size: 12px;
+  }
+}
+
+/* Mobile Portrait (480px and below) */
+@media (max-width: 480px) {
+  .earned-badges-card {
+    padding: 18px;
+  }
+  
+  .badges-list {
+    gap: 14px;
+  }
+  
+  .badge-item {
+    width: 85px;
+  }
+  
+  .badge-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 26px;
+  }
+  
+  .badge-item span {
+    font-size: 11px;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .badge-item {
+    width: 75px;
+  }
+  
+  .badge-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
   }
 }

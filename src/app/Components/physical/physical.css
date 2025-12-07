@@ -131,3 +131,158 @@
     opacity: 1;
   }
 }
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Large Tablets & Small Laptops (1024px and below) */
+@media (max-width: 1024px) {
+  .physical-header {
+    padding: 50px 30px 35px;
+  }
+
+  .physical-header h1 {
+    font-size: 42px;
+  }
+
+  .physical-header .subtitle {
+    font-size: 17px;
+  }
+}
+
+/* Mobile Landscape & Small Tablets (768px and below) */
+@media (max-width: 768px) {
+  .physical-header {
+    padding: 40px 20px 30px;
+  }
+
+  .physical-header h1 {
+    font-size: 36px;
+    letter-spacing: 1.5px;
+  }
+
+  .physical-header .subtitle {
+    font-size: 16px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .modal-content {
+    max-width: 95%;
+    max-height: 85vh;
+    border-radius: 10px;
+  }
+
+  .success-message {
+    top: 15px;
+    right: 15px;
+    left: 15px;
+  }
+
+  .success-content {
+    padding: 16px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .success-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
+  }
+
+  .success-content p {
+    font-size: 14px;
+  }
+}
+
+/* Mobile Portrait (480px and below) */
+@media (max-width: 480px) {
+  .physical-header {
+    padding: 30px 15px 25px;
+  }
+
+  .physical-header h1 {
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+
+  .physical-header .subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal-content {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 8px;
+    padding: 15px;
+  }
+
+  .success-message {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+  }
+
+  .success-content {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .success-content p {
+    font-size: 13px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .physical-header h1 {
+    font-size: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .physical-header .subtitle {
+    font-size: 14px;
+  }
+
+  .success-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+  }
+
+  .success-content {
+    padding: 12px;
+  }
+
+  .success-content p {
+    font-size: 12px;
+  }
+}
+
+/* Landscape Orientation (for phones in landscape) */
+@media (max-height: 600px) and (orientation: landscape) {
+  .physical-header {
+    padding: 25px 20px 20px;
+  }
+
+  .physical-header h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .physical-header .subtitle {
+    font-size: 14px;
+  }
+
+  .modal-content {
+    max-height: 88vh;
+  }
+}

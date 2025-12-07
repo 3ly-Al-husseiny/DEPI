@@ -572,6 +572,37 @@
    8. RESPONSIVE DESIGN & OVERLAYS
    ============================================= */
 
+/* --- Large Laptops (1200px and below) --- */
+@media (max-width: 1200px) {
+    .resource-media {
+        height: 140px;
+    }
+}
+
+/* --- Tablets (1024px and below) --- */
+@media (max-width: 1024px) {
+    .library-layout {
+        grid-template-columns: 240px 1fr;
+    }
+
+    .actionbar {
+        padding: .9rem 1rem;
+    }
+
+    .resource-media {
+        height: 130px;
+    }
+
+    .lv-item {
+        grid-template-columns: 120px 1fr;
+    }
+
+    .lv-media {
+        width: 120px;
+        height: 80px;
+    }
+}
+
 /* --- Desktop (>= 992px) --- */
 @media (min-width: 991.98px) {
     .library-layout.sidebar-collapsed {
@@ -666,6 +697,97 @@
     .filter-group {
         align-items: flex-start;
         flex-direction: column;
+    }
+}
+
+/* --- Mobile Portrait (480px and below) --- */
+@media (max-width: 480px) {
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .actionbar {
+        padding: .75rem;
+    }
+
+    .search.input-icon {
+        min-width: 100%;
+    }
+
+    .lv-media {
+        height: 140px;
+    }
+
+    .resource-body {
+        padding: .75rem;
+    }
+
+    .title {
+        font-size: .9rem;
+    }
+
+    .btn-fab-menu {
+        width: 52px;
+        height: 52px;
+        bottom: 1.2rem;
+        right: 1.2rem;
+    }
+
+    .btn-fab-menu svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* --- Extra Small Mobile (360px and below) --- */
+@media (max-width: 360px) {
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .actionbar {
+        padding: .65rem;
+    }
+
+    .resource-media {
+        height: 120px;
+    }
+
+    .resource-body {
+        padding: .65rem;
+    }
+
+    .title {
+        font-size: .85rem;
+    }
+
+    .btn-fab-menu {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* --- Landscape Orientation --- */
+@media (max-height: 600px) and (orientation: landscape) {
+    .page-header {
+        margin-bottom: 1rem;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+        margin-bottom: .5rem;
+    }
+
+    .resource-media {
+        height: 110px;
+    }
+
+    .lv-media {
+        height: 70px;
+    }
+
+    .actionbar {
+        padding: .75rem 1rem;
     }
 }
 

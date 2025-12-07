@@ -385,6 +385,35 @@
 
 /* ==================== RESPONSIVE STYLES ==================== */
 
+/* Large Laptops (1200px and below) */
+@media (max-width: 1200px) {
+  .challenges-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.8rem;
+  }
+}
+
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .challenges-grid-recent {
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.8rem;
+  }
+
+  .challenges-grid {
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1.8rem;
+  }
+
+  .modal-content {
+    padding: 1.8rem;
+  }
+}
+
 /* Tablets (768px and below) */
 @media (max-width: 768px) {
   .hero {
@@ -516,5 +545,37 @@
 
   .challenge-icon {
     font-size: 2.5rem;
+  }
+}
+
+/* Landscape Orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero {
+    padding: 1.5rem 0;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .modal-content {
+    max-height: 92vh;
+    padding: 1.5rem;
+  }
+
+  .modal-icon {
+    font-size: 3rem;
+  }
+
+  .modal-title {
+    font-size: 1.3rem;
+  }
+
+  .modal-info-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

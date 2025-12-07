@@ -16,6 +16,12 @@ export class RegisterPage {
   regForm: FormGroup;
   errorMessage: string = '';
   successMessage: string = '';
+  
+  // Photo upload properties
+  photoPreview: string = 'https://ui-avatars.com/api/?name=User&size=200&background=2d5f3f&color=e8f5e9&bold=true';
+  photoFileName: string = '';
+  selectedPhoto: File | null = null;
+  photoBase64: string = '';
 
   constructor(
     private authService: RegisterAuth,
@@ -26,9 +32,25 @@ export class RegisterPage {
       'name': new FormControl('', Validators.required),
       'email': new FormControl('', [Validators.required, Validators.email]),
       'password': new FormControl('', [Validators.required, Validators.minLength(6)]),
-      'weight': new FormControl('', [Validators.required, Validators.min(1)]),
-      'height': new FormControl('', [Validators.required, Validators.min(1)])
+      'weight': new FormControl('', [Validators.required, Validators.min(35), Validators.max(250)]),
+      'height': new FormControl('', [Validators.required, Validators.min(90), Validators.max(220)])
     });
+  }
+
+  onPhotoSelected(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      this.selectedPhoto = file;
+      this.photoFileName = file.name;
+
+      // Create preview
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.photoPreview = e.target.result;
+        this.photoBase64 = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
   }
 
   onSubmit() {
@@ -44,7 +66,7 @@ export class RegisterPage {
         height: Number(this.regForm.value.height),
         age: 25, // Default value
         gender: 'other', // Default value
-        photo: `https://ui-avatars.com/api/?name=${encodeURIComponent(this.regForm.value.name)}&size=200&background=2d5f3f&color=e8f5e9&bold=true`
+        photo: this.photoBase64 || `https://ui-avatars.com/api/?name=${encodeURIComponent(this.regForm.value.name)}&size=200&background=2d5f3f&color=e8f5e9&bold=true`
       };
 
       this.newAuthService.register(profile).subscribe(result => {

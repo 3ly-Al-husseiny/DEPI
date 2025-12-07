@@ -12,11 +12,19 @@ export interface UserProfile {
   height: number; // in cm
 }
 
+export interface UserStats {
+  points: number;
+  badges: string[];
+  completedChallenges: number;
+  activeChallenges: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserProfileService {
   private readonly STORAGE_KEY = 'userProfile';
+  private readonly CHALLENGES_STORAGE_KEY = 'challengesDetoxData';
   
   private defaultProfile: UserProfile = {
     name: 'John Doe',
@@ -45,6 +53,59 @@ export class UserProfileService {
   updateProfile(profile: UserProfile): void {
     this.profileSubject.next(profile);
     this.saveToStorage(profile);
+  }
+
+  /**
+   * Get user stats from challenges (points, badges, completed challenges)
+   */
+  getUserStats(): UserStats {
+    try {
+      const challengesData = localStorage.getItem(this.CHALLENGES_STORAGE_KEY);
+      console.log('🔍 Reading challengesData from localStorage:', challengesData ? 'Found' : 'Not found');
+      
+      if (challengesData) {
+        const data = JSON.parse(challengesData);
+        const challenges = data.challenges || [];
+        const completedCount = challenges.filter((c: any) => 
+          c.progress && c.progress.every((day: boolean) => day === true)
+        ).length;
+
+        const stats = {
+          points: data.user?.points || 0,
+          badges: data.user?.badges || [],
+          completedChallenges: completedCount,
+          activeChallenges: challenges.length
+        };
+        console.log('📈 Stats from localStorage:', stats);
+        return stats;
+      }
+    } catch (error) {
+      console.error('Error reading user stats:', error);
+    }
+
+    console.log('📉 No data found, returning defaults (0 points)');
+    return {
+      points: 0,
+      badges: [],
+      completedChallenges: 0,
+      activeChallenges: 0
+    };
+  }
+
+  /**
+   * Get all earned challenge badges
+   */
+  getChallengeBadges(): any[] {
+    try {
+      const challengesData = localStorage.getItem(this.CHALLENGES_STORAGE_KEY);
+      if (challengesData) {
+        const data = JSON.parse(challengesData);
+        return data.user?.challengeBadges || [];
+      }
+    } catch (error) {
+      console.error('Error reading challenge badges:', error);
+    }
+    return [];
   }
 
   calculateBMI(weight: number, height: number): number {

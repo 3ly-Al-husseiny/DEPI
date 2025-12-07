@@ -296,6 +296,37 @@
 
 /* ==================== RESPONSIVE STYLES ==================== */
 
+/* Large Laptops (1200px and below) */
+@media (max-width: 1200px) {
+    .progress-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 600px;
+    }
+
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .action-buttons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 /* Tablets (768px and below) */
 @media (max-width: 768px) {
     .hero {
@@ -522,5 +553,48 @@
     .action-btn {
         padding: 0.8rem 1rem;
         font-size: 0.9rem;
+    }
+}
+
+/* Landscape Orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: 2rem 0 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .stats-overview {
+        padding: 1.5rem 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .stat-card {
+        padding: 1.5rem;
+    }
+
+    .badges-section {
+        padding: 2rem 0;
+    }
+
+    .charts-section {
+        padding: 2rem 0;
+    }
+
+    .chart-container {
+        height: 250px;
+    }
+
+    .detailed-progress {
+        padding: 2rem 0;
+    }
+
+    .action-section {
+        padding: 2rem 0;
     }
 }

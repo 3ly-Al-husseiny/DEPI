@@ -78,6 +78,26 @@ body {
     box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
 }
 
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
+.form-control::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
+.form-control:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
 .actions {
     margin-top: 30px;
 }

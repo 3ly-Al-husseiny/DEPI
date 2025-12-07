@@ -121,6 +121,36 @@ export class SettingsComponent implements OnInit, OnDestroy {
     }, 3000);
   }
 
+  /**
+   * Reset all challenge data (for testing purposes)
+   * Clears points, badges, and active challenges
+   */
+  resetChallengeData(): void {
+    const confirmed = confirm(
+      '⚠️ Reset Challenge Data?\n\n' +
+      'This will clear:\n' +
+      '• All points (back to 0)\n' +
+      '• All earned badges\n' +
+      '• All active challenges\n\n' +
+      'Are you sure you want to continue?'
+    );
+
+    if (confirmed) {
+      try {
+        localStorage.removeItem('challengesDetoxData');
+        this.showNotification('Challenge data reset successfully! Refreshing...', 'success');
+        
+        // Reload page after short delay to show notification
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
+      } catch (error) {
+        console.error('Error resetting challenge data:', error);
+        this.showNotification('Failed to reset challenge data', 'error');
+      }
+    }
+  }
+
   ngOnInit(): void {
     this.profileSubscription = this.userProfileService.profile$.subscribe(profile => {
       this.userName = profile.name;

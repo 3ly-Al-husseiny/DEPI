@@ -18,13 +18,13 @@
 
 .profile-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   align-items: start;
 }
 
-app-user-summary {
-  grid-row: span 2;
+app-health-issues {
+  width: 100%;
 }
 
 .grid-span-2 {
@@ -32,12 +32,33 @@ app-user-summary {
 }
 
 /* === Responsive Design === */
-@media (max-width: 992px) {
+
+/* Large Laptops (1200px and below) */
+@media (max-width: 1200px) {
+  .profile-grid {
+    gap: 22px;
+  }
+}
+
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+  .user-profile-page {
+    padding: 30px 0;
+  }
+  
   .profile-grid {
     gap: 20px;
   }
 }
 
+/* Tablets (992px and below) */
+@media (max-width: 992px) {
+  .profile-grid {
+    gap: 18px;
+  }
+}
+
+/* Mobile Landscape & Tablets (768px and below) */
 @media (max-width: 768px) {
   .user-profile-page {
     padding: 20px 0;
@@ -48,11 +69,45 @@ app-user-summary {
     gap: 16px;
   }
   
-  app-user-summary {
-    grid-row: auto;
+  app-health-issues {
+    grid-column: auto;
   }
   
   .grid-span-2 {
     grid-column: auto;
+  }
+}
+
+/* Mobile Portrait (480px and below) */
+@media (max-width: 480px) {
+  .user-profile-page {
+    padding: 15px 0;
+  }
+  
+  .profile-grid {
+    gap: 14px;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .user-profile-page {
+    padding: 12px 0;
+  }
+  
+  .profile-grid {
+    gap: 12px;
+  }
+}
+
+/* Landscape Orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+  .user-profile-page {
+    padding: 20px 0;
+  }
+  
+  .profile-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 }

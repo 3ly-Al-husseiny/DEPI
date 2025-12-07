@@ -263,20 +263,218 @@
   border-color: #e74c3c;
 }
 
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Large Laptops (1200px and below) */
+@media (max-width: 1200px) {
+  .meal-logger-card {
+    padding: 28px;
+  }
+}
+
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+  .meal-logger-card {
+    padding: 25px;
+  }
+
+  .meal-logger-card h3 {
+    font-size: 22px;
+  }
+
+  .summary-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .elements-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+
+/* Mobile Landscape & Small Tablets (768px and below) */
 @media (max-width: 768px) {
   .meal-logger-card {
     padding: 20px;
   }
 
+  .meal-logger-card h3 {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .input-section label {
+    font-size: 13px;
+  }
+
+  .input-section textarea {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .analyze-btn,
+  .save-btn,
+  .cancel-btn {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+
+  .analysis-results h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .summary-info {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .info-item {
+    padding: 12px;
+  }
+
+  .info-item .label {
+    font-size: 12px;
+  }
+
+  .info-item .value {
+    font-size: 18px;
+  }
+
   .elements-grid {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .element-card {
+    padding: 12px;
+  }
+
+  .element-name {
+    font-size: 11px;
+  }
+
+  .element-amount {
+    font-size: 16px;
+  }
+
+  .element-dv {
+    font-size: 12px;
   }
 
   .action-buttons {
     flex-direction: column;
+    gap: 10px;
   }
 
   .cancel-btn {
     flex: 1;
+  }
+}
+
+/* Mobile Portrait (480px and below) */
+@media (max-width: 480px) {
+  .meal-logger-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .meal-logger-card h3 {
+    font-size: 18px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .input-section textarea {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .char-counter {
+    font-size: 11px;
+  }
+
+  .error-message,
+  .success-message {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .analyze-btn,
+  .save-btn,
+  .cancel-btn {
+    padding: 11px 20px;
+    font-size: 14px;
+  }
+
+  .analysis-results h4 {
+    font-size: 17px;
+  }
+
+  .info-item {
+    padding: 10px;
+  }
+
+  .info-item .value {
+    font-size: 16px;
+  }
+
+  .elements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .element-card {
+    padding: 10px;
+  }
+
+  .element-amount {
+    font-size: 15px;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .meal-logger-card {
+    padding: 14px;
+  }
+
+  .meal-logger-card h3 {
+    font-size: 17px;
+  }
+
+  .elements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .element-card {
+    padding: 12px;
+  }
+
+  .analyze-btn,
+  .save-btn,
+  .cancel-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+/* Landscape Orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+  .meal-logger-card {
+    padding: 18px;
+  }
+
+  .summary-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .elements-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
 }

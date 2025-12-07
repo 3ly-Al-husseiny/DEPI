@@ -233,6 +233,20 @@
   border-color: #e74c3c;
 }
 
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+  .meal-history-container {
+    padding: 30px;
+  }
+
+  .history-header h2 {
+    font-size: 26px;
+  }
+}
+
+/* Mobile Landscape & Small Tablets (768px and below) */
 @media (max-width: 768px) {
   .meal-history-container {
     padding: 20px;
@@ -242,19 +256,223 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .history-header h2 {
+    font-size: 24px;
+  }
+
+  .clear-btn {
+    padding: 9px 18px;
+    font-size: 13px;
+  }
+
+  .no-meals-message {
+    margin: 50px auto;
+    padding: 40px 25px;
+    border-radius: 14px;
+  }
+
+  .message-icon {
+    font-size: 50px;
+    margin-bottom: 12px;
+  }
+
+  .no-meals-message h3 {
+    font-size: 22px;
+  }
+
+  .no-meals-message p {
+    font-size: 13px;
+  }
+
+  .meal-card {
+    border-radius: 14px;
+  }
+
+  .meal-header {
+    padding: 18px 20px;
   }
 
   .meal-date-time {
     flex-direction: column;
     gap: 5px;
+    margin-bottom: 6px;
   }
 
-  .elements-grid-small {
-    grid-template-columns: 1fr;
+  .date,
+  .time {
+    font-size: 12px;
+  }
+
+  .meal-description {
+    font-size: 16px;
+    margin-bottom: 10px;
   }
 
   .meal-summary {
     flex-direction: column;
     gap: 5px;
+    font-size: 13px;
+  }
+
+  .expand-icon {
+    font-size: 16px;
+  }
+
+  .meal-details {
+    padding: 0 20px 18px;
+  }
+
+  .serving-info {
+    margin: 12px 0;
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  .elements-breakdown h5 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .elements-grid-small {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .element-item {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+
+  .delete-btn {
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile Portrait (480px and below) */
+@media (max-width: 480px) {
+  .meal-history-container {
+    padding: 15px;
+  }
+
+  .history-header h2 {
+    font-size: 22px;
+  }
+
+  .clear-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .no-meals-message {
+    margin: 40px auto;
+    padding: 35px 20px;
+  }
+
+  .message-icon {
+    font-size: 45px;
+  }
+
+  .no-meals-message h3 {
+    font-size: 20px;
+  }
+
+  .no-meals-message p {
+    font-size: 12px;
+  }
+
+  .meals-list {
+    gap: 12px;
+  }
+
+  .meal-card {
+    border-radius: 12px;
+  }
+
+  .meal-header {
+    padding: 16px 18px;
+  }
+
+  .meal-description {
+    font-size: 15px;
+  }
+
+  .meal-summary {
+    font-size: 12px;
+  }
+
+  .meal-details {
+    padding: 0 18px 16px;
+  }
+
+  .serving-info {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .elements-breakdown h5 {
+    font-size: 14px;
+  }
+
+  .element-item {
+    padding: 8px;
+  }
+
+  .meal-actions {
+    margin-top: 12px;
+  }
+
+  .delete-btn {
+    width: 100%;
+    padding: 9px 12px;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .meal-history-container {
+    padding: 12px;
+  }
+
+  .history-header h2 {
+    font-size: 20px;
+  }
+
+  .meal-description {
+    font-size: 14px;
+  }
+
+  .meal-summary {
+    font-size: 11px;
+  }
+}
+
+/* Landscape Orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+  .meal-history-container {
+    padding: 18px;
+  }
+
+  .history-header {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .clear-btn {
+    width: auto;
+  }
+
+  .no-meals-message {
+    margin: 30px auto;
+    padding: 30px 25px;
+  }
+
+  .elements-grid-small {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

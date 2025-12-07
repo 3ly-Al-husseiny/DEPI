@@ -190,7 +190,200 @@
   background: linear-gradient(90deg, #ef5350, #f44336);
 }
 
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Large Laptops (1200px and below) */
+@media (max-width: 1200px) {
+  .dashboard-container {
+    padding: 35px;
+  }
+
+  .elements-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 18px;
+  }
+}
+
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+  .dashboard-container {
+    padding: 30px;
+  }
+
+  .dashboard-container h2 {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    margin-bottom: 35px;
+  }
+
+  .elements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .element-card {
+    padding: 22px;
+  }
+
+  .element-amount .value {
+    font-size: 32px;
+  }
+}
+
+/* Mobile Landscape & Small Tablets (768px and below) */
 @media (max-width: 768px) {
+  .dashboard-container {
+    padding: 20px;
+  }
+
+  .dashboard-container h2 {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .no-data-message {
+    margin: 60px auto;
+    padding: 50px 30px;
+    border-radius: 16px;
+  }
+
+  .message-icon {
+    font-size: 60px;
+  }
+
+  .no-data-message h3 {
+    font-size: 24px;
+  }
+
+  .no-data-message p {
+    font-size: 15px;
+  }
+
+  .elements-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .element-card {
+    padding: 20px;
+  }
+
+  .element-header h4 {
+    font-size: 15px;
+  }
+
+  .meal-count {
+    font-size: 11px;
+  }
+
+  .element-amount .value {
+    font-size: 30px;
+  }
+
+  .element-amount .unit {
+    font-size: 16px;
+  }
+
+  .dv-label {
+    font-size: 12px;
+  }
+
+  .status {
+    font-size: 11px;
+    padding: 2px 8px;
+  }
+}
+
+/* Mobile Portrait (480px and below) */
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 15px;
+  }
+
+  .dashboard-container h2 {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .no-data-message {
+    margin: 50px auto;
+    padding: 40px 25px;
+    border-radius: 14px;
+  }
+
+  .message-icon {
+    font-size: 50px;
+  }
+
+  .no-data-message h3 {
+    font-size: 22px;
+  }
+
+  .no-data-message p {
+    font-size: 14px;
+  }
+
+  .sub-text {
+    font-size: 13px;
+  }
+
+  .element-card {
+    padding: 18px;
+  }
+
+  .element-header h4 {
+    font-size: 14px;
+  }
+
+  .element-amount .value {
+    font-size: 28px;
+  }
+
+  .element-amount .unit {
+    font-size: 15px;
+  }
+
+  .progress-bar {
+    height: 6px;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .dashboard-container {
+    padding: 12px;
+  }
+
+  .dashboard-container h2 {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .element-card {
+    padding: 16px;
+  }
+
+  .element-amount .value {
+    font-size: 26px;
+  }
+}
+
+/* Landscape Orientation */
+@media (max-height: 600px) and (orientation: landscape) {
   .dashboard-container {
     padding: 20px;
   }
@@ -199,11 +392,17 @@
     font-size: 24px;
   }
 
+  .subtitle {
+    margin-bottom: 25px;
+  }
+
   .elements-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .no-data-message {
-    padding: 40px 20px;
+    margin: 40px auto;
+    padding: 30px 25px;
   }
 }

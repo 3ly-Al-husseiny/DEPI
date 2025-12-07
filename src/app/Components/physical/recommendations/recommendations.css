@@ -608,19 +608,115 @@
   line-height: 1.5;
 }
 
-/* Responsive Design */
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Large Laptops (1200px and below) */
+@media (max-width: 1200px) {
+  .recommendations-container {
+    padding: 35px;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+  .recommendations-container {
+    padding: 30px;
+  }
+
+  .recommendations-container h2 {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+
+  .no-recommendations-message {
+    margin: 60px auto;
+    padding: 50px 35px;
+  }
+
+  .message-icon {
+    font-size: 70px;
+  }
+
+  .no-recommendations-message h3 {
+    font-size: 28px;
+  }
+
+  .no-recommendations-message p {
+    font-size: 17px;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  .card-content h3 {
+    font-size: 19px;
+  }
+
+  .modal-container {
+    max-width: 950px;
+  }
+
+  .tips-grid,
+  .quick-fixes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+
+/* Mobile Landscape & Small Tablets (768px and below) */
 @media (max-width: 768px) {
   .recommendations-container {
     padding: 20px;
   }
 
   .recommendations-container h2 {
-    font-size: 24px;
+    font-size: 26px;
+    margin-bottom: 8px;
   }
 
   .subtitle {
     font-size: 14px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+  }
+
+  .no-recommendations-message {
+    margin: 50px auto;
+    padding: 40px 30px;
+    border-radius: 16px;
+  }
+
+  .message-icon {
+    font-size: 60px;
+    margin-bottom: 16px;
+  }
+
+  .no-recommendations-message h3 {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .no-recommendations-message p {
+    font-size: 16px;
+  }
+
+  .no-recommendations-message .sub-message {
+    font-size: 15px;
+    margin-top: 16px;
   }
 
   .cards-container {
@@ -645,12 +741,51 @@
     font-size: 13px;
   }
 
+  .score-indicator {
+    gap: 8px;
+    margin-top: 10px;
+    padding: 8px 10px;
+  }
+
+  .score-label {
+    font-size: 12px;
+  }
+
+  .score-value {
+    font-size: 15px;
+    padding: 3px 10px;
+  }
+
+  /* Modal */
+  .modal-overlay {
+    padding: 15px;
+  }
+
+  .modal-container {
+    max-width: 100%;
+    max-height: 88vh;
+    border-radius: 12px;
+  }
+
+  .modal-close {
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .modal-close svg {
+    width: 18px;
+    height: 18px;
+  }
+
   .modal-content {
     padding: 30px 20px;
   }
 
   .modal-title {
-    font-size: 24px;
+    font-size: 26px;
+    margin-bottom: 8px;
   }
 
   .modal-subtitle {
@@ -658,14 +793,21 @@
     margin-bottom: 30px;
   }
 
+  /* Exercise Cards */
+  .exercises-container {
+    gap: 20px;
+  }
+
   .exercise-card {
     padding: 20px;
   }
 
   .exercise-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
   }
 
   .exercise-emoji {
@@ -674,39 +816,372 @@
 
   .exercise-info h3 {
     font-size: 18px;
+    margin-bottom: 6px;
   }
 
-  .modal-container {
-    max-width: 100%;
-    border-radius: 12px;
+  .exercise-duration {
+    font-size: 13px;
+    padding: 3px 10px;
   }
 
-  .tips-grid,
-  .quick-fixes-grid {
-    grid-template-columns: 1fr;
+  .exercise-body h4 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .exercise-steps {
+    margin-bottom: 16px;
+  }
+
+  .exercise-steps li {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .exercise-benefits {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  /* Section Container */
+  .section-container {
+    margin-bottom: 35px;
+    padding-bottom: 25px;
   }
 
   .section-title {
-    font-size: 18px;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .section-subtitle {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  /* Grids */
+  .tips-grid,
+  .quick-fixes-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .tip-card,
   .quick-fix-card {
     padding: 12px;
   }
+
+  .tip-icon,
+  .fix-icon {
+    font-size: 22px;
+  }
+
+  .tip-content h4,
+  .fix-content h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .tip-content p,
+  .fix-content p {
+    font-size: 12px;
+  }
+
+  /* Reminders */
+  .reminders-list {
+    gap: 10px;
+  }
+
+  .reminder-item {
+    padding: 10px 12px;
+  }
+
+  .reminder-icon {
+    font-size: 18px;
+  }
+
+  .reminder-item p {
+    font-size: 13px;
+  }
 }
 
+/* Mobile Portrait (480px and below) */
 @media (max-width: 480px) {
-  .card-content h3 {
-    font-size: 16px;
+  .recommendations-container {
+    padding: 15px;
+  }
+
+  .recommendations-container h2 {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+
+  .no-recommendations-message {
+    margin: 40px auto;
+    padding: 35px 25px;
+    border-radius: 14px;
+  }
+
+  .message-icon {
+    font-size: 50px;
+    margin-bottom: 14px;
+  }
+
+  .no-recommendations-message h3 {
+    font-size: 22px;
+  }
+
+  .no-recommendations-message p {
+    font-size: 15px;
+  }
+
+  .no-recommendations-message .sub-message {
+    font-size: 14px;
+  }
+
+  .cards-container {
+    gap: 16px;
+    padding: 5px;
+  }
+
+  .card {
+    border-radius: 14px;
   }
 
   .card img {
     height: 160px;
   }
 
+  .card-content {
+    padding: 18px;
+  }
+
+  .card-content h3 {
+    font-size: 17px;
+  }
+
+  .card-content p {
+    font-size: 12px;
+  }
+
+  .score-indicator {
+    padding: 7px 9px;
+  }
+
+  .score-label {
+    font-size: 11px;
+  }
+
+  .score-value {
+    font-size: 14px;
+    padding: 2px 8px;
+  }
+
+  /* Modal */
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal-container {
+    max-height: 90vh;
+    border-radius: 10px;
+  }
+
+  .modal-close {
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .modal-close svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .modal-content {
+    padding: 25px 16px;
+  }
+
+  .modal-title {
+    font-size: 22px;
+  }
+
+  .modal-subtitle {
+    font-size: 13px;
+    margin-bottom: 25px;
+  }
+
+  /* Exercise Cards */
+  .exercises-container {
+    gap: 18px;
+  }
+
+  .exercise-card {
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  .exercise-header {
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+  }
+
+  .exercise-emoji {
+    font-size: 26px;
+  }
+
+  .exercise-info h3 {
+    font-size: 17px;
+  }
+
+  .exercise-duration {
+    font-size: 12px;
+    padding: 3px 9px;
+  }
+
+  .exercise-body h4 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .exercise-steps {
+    margin-bottom: 14px;
+    padding-left: 18px;
+  }
+
+  .exercise-steps li {
+    font-size: 12px;
+    margin-bottom: 7px;
+  }
+
+  .exercise-benefits {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+
+  /* Section Container */
+  .section-container {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .section-subtitle {
+    font-size: 12px;
+  }
+
+  /* Grids */
+  .tips-grid,
+  .quick-fixes-grid {
+    gap: 10px;
+  }
+
+  .tip-card,
+  .quick-fix-card {
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .tip-icon,
+  .fix-icon {
+    font-size: 20px;
+  }
+
+  .tip-content h4,
+  .fix-content h4 {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .tip-content p,
+  .fix-content p {
+    font-size: 11px;
+  }
+
+  /* Reminders */
+  .reminders-list {
+    gap: 8px;
+  }
+
+  .reminder-item {
+    padding: 9px 10px;
+  }
+
+  .reminder-icon {
+    font-size: 16px;
+  }
+
+  .reminder-item p {
+    font-size: 12px;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .recommendations-container {
+    padding: 12px;
+  }
+
+  .recommendations-container h2 {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .no-recommendations-message {
+    padding: 30px 20px;
+  }
+
+  .message-icon {
+    font-size: 45px;
+  }
+
+  .no-recommendations-message h3 {
+    font-size: 20px;
+  }
+
+  .no-recommendations-message p {
+    font-size: 14px;
+  }
+
+  .no-recommendations-message .sub-message {
+    font-size: 13px;
+  }
+
+  .card img {
+    height: 140px;
+  }
+
+  .card-content {
+    padding: 16px;
+  }
+
+  .card-content h3 {
+    font-size: 16px;
+  }
+
+  .card-content p {
+    font-size: 11px;
+  }
+
   .modal-title {
     font-size: 20px;
+  }
+
+  .modal-subtitle {
+    font-size: 12px;
   }
 
   .exercise-info h3 {
@@ -714,11 +1189,11 @@
   }
 
   .exercise-steps li {
-    font-size: 13px;
+    font-size: 11px;
   }
 
   .exercise-benefits {
-    font-size: 13px;
+    font-size: 11px;
   }
 
   .section-title {
@@ -727,25 +1202,70 @@
 
   .tip-content h4,
   .fix-content h4 {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .tip-content p,
   .fix-content p,
   .reminder-item p {
-    font-size: 12px;
+    font-size: 10px;
+  }
+
+  .modal-close {
+    width: 32px;
+    height: 32px;
+  }
+
+  .modal-close svg {
+    width: 14px;
+    height: 14px;
   }
 }
 
-/* Responsive grid for smaller screens */
-@media (max-width: 1024px) {
-  .cards-container {
+/* Landscape Orientation (for phones in landscape) */
+@media (max-height: 600px) and (orientation: landscape) {
+  .recommendations-container {
+    padding: 20px;
+  }
+
+  .recommendations-container h2 {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    margin-bottom: 25px;
+  }
+
+  .no-recommendations-message {
+    margin: 30px auto;
+    padding: 30px 25px;
+  }
+
+  .message-icon {
+    font-size: 50px;
+  }
+
+  .modal-container {
+    max-height: 92vh;
+  }
+
+  .modal-content {
+    padding: 20px 16px;
+  }
+
+  .section-container {
+    margin-bottom: 25px;
+    padding-bottom: 18px;
+  }
+
+  .exercise-card {
+    padding: 16px;
+  }
+
+  .tips-grid,
+  .quick-fixes-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .cards-container {
-    grid-template-columns: 1fr;
   }
 }

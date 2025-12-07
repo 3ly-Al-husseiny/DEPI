@@ -240,6 +240,21 @@
 
 /* ==================== RESPONSIVE STYLES ==================== */
 
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+    .challenge-details-card {
+        padding: 2rem;
+    }
+    
+    .challenge-title-large {
+        font-size: 2.2rem;
+    }
+    
+    .challenge-icon-large {
+        font-size: 4.5rem;
+    }
+}
+
 /* Tablets (768px and below) */
 @media (max-width: 768px) {
     .challenge-details-card {
@@ -343,5 +358,33 @@
 @media (max-width: 360px) {
     .timeline-title {
         font-size: 1.3rem;
+    }
+}
+
+/* Landscape Orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+    .challenge-details-card {
+        padding: 1.5rem;
+    }
+    
+    .challenge-header {
+        margin-bottom: 1.5rem;
+    }
+    
+    .challenge-icon-large {
+        font-size: 3rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .challenge-title-large {
+        font-size: 1.8rem;
+    }
+    
+    .progress-bar-container {
+        height: 20px;
+    }
+    
+    .timeline-item {
+        padding: 1rem;
     }
 }

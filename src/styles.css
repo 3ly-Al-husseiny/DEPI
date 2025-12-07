@@ -153,12 +153,54 @@ h2 {
 }
 
 /* === Responsive === */
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    padding: 20px 25px;
+  }
+}
+
+/* Mobile devices */
 @media (max-width: 768px) {
   .container {
-    padding: 15px;
+    padding: 15px 20px;
   }
   
   .card {
     padding: 18px;
+    border-radius: 10px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    padding-bottom: 10px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 360px) {
+  .container {
+    padding: 12px;
+  }
+
+  .card {
+    padding: 14px;
   }
 }
